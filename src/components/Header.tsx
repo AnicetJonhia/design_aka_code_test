@@ -1,16 +1,33 @@
 import React, {useEffect, useRef, useState} from "react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {Search, Menu, CircleUser} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import logo from "../assets/images/logo.png";
-import { ToggleDarkMode } from "./ToggleDarkMode";
-import { LayoutDashboard, Edit3, ShoppingCart, Package, Blinds, CalendarArrowUp, MessageCircle, LineChart } from "lucide-react";
+import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet";
+import {
+    Blinds,
+    CalendarArrowUp,
+    CircleUser,
+    Edit3,
+    LayoutDashboard,
+    LineChart,
+    Menu,
+    MessageCircle,
+    Package,
+    Search,
+    ShoppingCart
+} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import {Input} from "@/components/ui/input";
+import logo from "../assets/react.svg";
+import {ToggleDarkMode} from "./ToggleDarkMode";
 
 import HeaderNavItem from "./header/HeaderNavItem.tsx";
-import { Link } from "react-router-dom";
-import LanguageSwitcher  from "@/components/LanguageSwitcher.tsx";
+import {Link} from "react-router-dom";
 import Logout from "@/components/Logout.tsx";
 
 import userStore from "@/stores/userStore.ts";
@@ -46,7 +63,7 @@ export default function Header() {
 
   return (
     <header className=" flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
-      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}> {/* Gérer l'ouverture du Sheet */}
+      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden" onClick={() => setIsSheetOpen(true)}>
             <Menu className="h-5 w-5" />
@@ -58,11 +75,11 @@ export default function Header() {
           <nav className="grid gap-2 text-lg font-medium">
             <Link to={"/dashboard"} className="flex items-center gap-2 text-lg font-semibold">
               <img alt={""} src={logo} className="h-6 w-6" />
-              <span>AgriD</span>
+              <span>CureAI</span>
             </Link>
              <HeaderNavItem to="/dashboard" icon={LayoutDashboard} label="Dashboard" onClick={closeSheet} />
             <HeaderNavItem to="/blogs" icon={Edit3} label="Blogs" onClick={closeSheet} />
-            <HeaderNavItem to="/orders" icon={ShoppingCart} label="Orders" badgeCount={6} onClick={closeSheet} />
+            <HeaderNavItem to="/orders" icon={ShoppingCart} label="Orders"  onClick={closeSheet} />
             <HeaderNavItem to="/products" icon={Package} label="Products" onClick={closeSheet} />
             <HeaderNavItem to="/needs" icon={Blinds} label="Needs" onClick={closeSheet} />
             <HeaderNavItem to="/seasons" icon={CalendarArrowUp} label="Seasons" onClick={closeSheet} />
@@ -87,7 +104,7 @@ export default function Header() {
       </div>
 
 
-      <LanguageSwitcher/>
+
       <ToggleDarkMode />
 
       <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>

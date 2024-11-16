@@ -44,21 +44,19 @@ export default function AuthLayout() {
 
   return (
 
-
-      <div className="  h-[100vh] flex flex-1 flex-col">
-        <AuthHeader />
-        <main ref={mainRef} className="flex-1 overflow-x-auto overflow-y-auto ">
-          <Outlet />
-
-        </main>
-        {showButton && (
-          <Button
-            className="fixed bottom-4 right-4 z-50 rounded-full p-3  text-white"
-            onClick={handleClick}
-          >
-            <ArrowUpFromDot />
-          </Button>
-        )}
-      </div>
+  <div className="h-[100vh] flex flex-1 flex-col">
+       <AuthHeader />
+      <main ref={mainRef} className="flex-1 h-full flex justify-center items-center overflow-x-auto overflow-y-auto">
+        <Outlet />
+      </main>
+      {showButton && (
+        <Button
+          className="fixed bottom-4 right-4 z-50 rounded-full p-3 text-white"
+          onClick={handleClick}
+        >
+          <ArrowUpFromDot />
+        </Button>
+      )}
+    </div>
   );
 }

@@ -11,10 +11,10 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/react.svg";
 import { ToggleDarkMode } from "./ToggleDarkMode";
 import { Link } from "react-router-dom";
-import LanguageSwitcher  from "@/components/LanguageSwitcher.tsx";
+
 import { CoolMode } from "@/components/ui/cool-mode";
 import {useState} from "react";
 
@@ -41,7 +41,7 @@ export default function AuthHeader() {
         <CoolMode>
           <Link to="/" className="flex items-center gap-2 text-lg font-semibold">
           <img alt="Logo" src={logo} className="h-6 w-6" />
-          <span>AgriD</span>
+          <span>CureAI</span>
         </Link>
         </CoolMode>
       </nav>
@@ -67,7 +67,7 @@ export default function AuthHeader() {
         </Button></CoolMode>
       </nav>
 
-        <LanguageSwitcher />
+
       <ToggleDarkMode />
 
 

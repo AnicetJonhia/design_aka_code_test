@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './stores';
-import { AuthProvider } from './context/AuthContext';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {store} from './stores';
+import {AuthProvider} from './context/AuthContext';
 import Products from './pages/Products.tsx';
 import Dashboard from "./pages/Dashboard.tsx";
 import Blogs from "./pages/Blogs.tsx";
@@ -11,13 +11,12 @@ import Chats from "./pages/Chats.tsx";
 import Analytics from "./pages/Analytics.tsx";
 import Needs from "./pages/Needs.tsx";
 import Orders from "./pages/Orders.tsx";
-import ProductDetail from './pages/products/ProductDetail.tsx';
 import AuthLayout from "@/layout/AuthLayout.tsx";
 import Home from '@/pages/auth/Home.tsx';
 import Login from "@/pages/auth/Login.tsx"
 import Register from "@/pages/auth/Register.tsx";
 import UserProfile from "@/pages/UserProfile";
-import { ThemeProvider } from "@/context/ThemeContext";
+import {ThemeProvider} from "@/context/ThemeContext";
 
 function App() {
     return (
@@ -34,9 +33,9 @@ function App() {
                             <Route element={<MainLayout />}>
                                 <Route path="/dashboard" element={<Dashboard />} />
                                 <Route path="/blogs" element={<Blogs />} />
-                                <Route path="/products">
-                                    <Route index element={<Products />} />
-                                    <Route path="/products/product-detail" element={<ProductDetail />} />
+                                <Route path="/products" element={<Products />}>
+
+
                                 </Route>
                                 <Route path="/analytics" element={<Analytics />} />
                                 <Route path="/needs" element={<Needs />} />

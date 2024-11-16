@@ -1,8 +1,6 @@
-import CalendarInfo from "@/components/CalendarInfo";
-
 const Seasons = () => {
     return (
-        <CalendarInfo/>
+        <div>seasons</div>
     );
 };
 
